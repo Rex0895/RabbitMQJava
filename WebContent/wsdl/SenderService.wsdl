@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://services" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://services" xmlns:intf="http://services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://services" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getWSname">
+    <complexType/>
+   </element>
+   <element name="getWSnameResponse">
+    <complexType>
+     <sequence>
+      <element name="getWSnameReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="messageAction">
+    <complexType>
+     <sequence>
+      <element name="message" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="messageActionResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="messageActionResponse">
+
+      <wsdl:part element="impl:messageActionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getWSnameRequest">
+
+      <wsdl:part element="impl:getWSname" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getWSnameResponse">
+
+      <wsdl:part element="impl:getWSnameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="messageActionRequest">
+
+      <wsdl:part element="impl:messageAction" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="SenderService">
+
+      <wsdl:operation name="getWSname">
+
+         <wsdl:input message="impl:getWSnameRequest" name="getWSnameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getWSnameResponse" name="getWSnameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="messageAction">
+
+         <wsdl:input message="impl:messageActionRequest" name="messageActionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:messageActionResponse" name="messageActionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="SenderServiceSoapBinding" type="impl:SenderService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getWSname">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getWSnameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getWSnameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="messageAction">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="messageActionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="messageActionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="SenderServiceService">
+
+      <wsdl:port binding="impl:SenderServiceSoapBinding" name="SenderService">
+
+         <wsdlsoap:address location="http://localhost:8080/RabbitProjectV1/services/SenderService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
