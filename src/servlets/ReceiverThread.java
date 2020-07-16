@@ -9,7 +9,7 @@ import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.DeliverCallback;
 
-public class Receiver implements Runnable {
+public class ReceiverThread implements Runnable {
 	//private final static String QUEUE_NAME = "wsqueue";
 	private static ArrayList<String> messages = new ArrayList<>();
 	public void run() {

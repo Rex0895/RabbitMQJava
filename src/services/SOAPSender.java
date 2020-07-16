@@ -1,4 +1,4 @@
-package client;
+package services;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;

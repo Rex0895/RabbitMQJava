@@ -23,7 +23,7 @@ public class ReceiverServlet extends HttpServlet {
 		writer.println("<h2>"+" [*] Waiting for messages. To exit press CTRL+C"+"</h2>");
 		try {
 			for (int i = 0; i < 10; i++) {
-				Thread t = new Thread(new Receiver());
+				Thread t = new Thread(new ReceiverThread());
 				t.start();
 			}
 		}
