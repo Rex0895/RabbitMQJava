@@ -28,13 +28,13 @@ public class HTTPRequestThread implements Runnable{
 	
 	public void run()
 	{
-		publishMsg(id,msgCount,interval);
+		publishMsg();
 	}
 	
-	public void publishMsg(int id, int count, int interval) {
+	public void publishMsg() {
 		try {
 			String msg;
-			for(int i =1;i<=count;i++) {
+			for(int i =1;i<=msgCount;i++) {
 				msg="Отправитель №"+id+" Сообщение №" +i+";";
 				postMsg(msg);
 				if(interval!=0)
